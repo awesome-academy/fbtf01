@@ -1,3 +1,32 @@
 vi:
+  dictionary:
+    base_title: "Hệ Thống Đặt Tour Du Lịch Framgia"
   layouts:
-    title: "Framgia - Hệ Thống Đặt Tour Du Lịch"
+    header:
+      booking_tours: "Framgia Tour Booking"
+      language:
+        en: "Tiếng Anh"
+        language: "Ngôn Ngữ"
+        vi: "Tiếng Việt"
+      sign_in: "Đăng Nhập"
+      register: "Đăng Ký"
+  shared:
+    error_messages:
+      error: "lỗi"
+      form: "Đơn gồm"
+  static_pages:
+    home:
+      welcome: "CHÀO MỪNG BẠN ĐẾN VỚI FRAMGIA - HỆ THỐNG ĐẶT TOUR"
+  users:
+    flash:
+      create_successful: "Đăng ký tài khoản thành công"
+      create_failed: "Lỗi trong quá trình đăng ký tài khoản"
+    new:
+      address: "Địa Chỉ"
+      create_account: "Tạo Tài Khoản"
+      email: "Email"
+      name: "Tên Người Dùng"
+      password: "Mật Khẩu"
+      password_confirmation: "Xác Nhận Mật Khẩu"
+      phone: "Số Điện Thoại"
+      title: "Đăng Ký"

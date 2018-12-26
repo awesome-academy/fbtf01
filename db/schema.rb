@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_12_26_055019) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "number_passengers"
-    t.integer "status"
+    t.integer "status", default: 2
     t.integer "user_id"
     t.integer "tour_id"
     t.datetime "created_at", null: false
