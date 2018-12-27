@@ -31,4 +31,13 @@ class User < ApplicationRecord
       minimum: Settings.users.phone.min_length,
       maximum: Settings.users.phone.max_length
     }, numericality: true
+
+  # callbacks
+  before_save :downcase_email
+
+  private
+  # Converts email to all lower-case.
+  def downcase_email
+    email.downcase!
+  end
 end

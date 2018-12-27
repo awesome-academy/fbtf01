@@ -3,13 +3,28 @@ vi:
     base_title: "Hệ Thống Đặt Tour Du Lịch Framgia"
   layouts:
     header:
+      bookings: ""
       booking_tours: "Framgia Tour Booking"
       language:
         en: "Tiếng Anh"
         language: "Ngôn Ngữ"
         vi: "Tiếng Việt"
+      profile: "Hồ Sơ"
+      settings: "Cài Đặt"
       sign_in: "Đăng Nhập"
       register: "Đăng Ký"
+  sessions:
+    flash:
+      sign_in_successful: "Đăng nhập thành công"
+      sign_in_failed: "Email/Mật khẩu không hợp lệ"
+      user_not_found: "Email không tồn tại"
+    new:
+      email: "Email"
+      no_account: "Chưa có tài khoản! "
+      password: "Mật Khẩu"
+      register_now: "Đăng ký ngay"
+      sign_in: "Đăng Nhập"
+      title: "Đăng Nhập"
   shared:
     error_messages:
       error: "lỗi"

@@ -17,12 +17,30 @@
               request.query_parameters.merge(locale: :vi) %></a>
           </div>
         </div>
-        <div class="header-tags">
-            <%= link_to t(".sign_in"), "#", class: "btn btn-info btn-m header-btn" %>
-        </div>
-        <div class="header-tags">
-          <%= link_to t(".register"), register_path, class: "btn btn-info btn-m header-btn" %>
-        </div>
+        <% if signed_in? %>
+          <div class="dropdown header-tags">
+            <button class="btn dropdown-toggle btn-m" type="button"
+              id="languageDropDown" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <%= t ".profile" %> <b class="caret"></b>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="languageDropDown">
+              <a class="dropdown-item"><%= link_to t(".bookings"), "#" %></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item"><%= link_to t(".settings"), "#" %></a>
+            </div>
+          </div>
+          <div class="header-tags">
+              <%= link_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-info btn-m header-btn" %>
+          </div>
+        <% else %>
+          <div class="header-tags">
+              <%= link_to t(".sign_in"), sign_in_path, class: "btn btn-info btn-m header-btn" %>
+          </div>
+          <div class="header-tags">
+            <%= link_to t(".register"), register_path, class: "btn btn-info btn-m header-btn" %>
+          </div>
+        <% end %>
       </div>
     </nav>
   </div>
