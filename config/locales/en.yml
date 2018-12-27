@@ -3,13 +3,28 @@ en:
     base_title: "Framgia Tour Booking System"
   layouts:
     header:
+      bookings: "Bookings"
       booking_tours: "Framgia Tour Booking"
       language:
         en: "English"
         language: "Language"
         vi: "Vietnamese"
+      profile: "Profile"
+      settings: "Settings"
       sign_in: "Sign In"
       register: "Register"
+  sessions:
+    flash:
+      sign_in_successful: "Sign in successful"
+      sign_in_failed: "Invalid Email/Password combination"
+      user_not_found: "Email does not exist"
+    new:
+      email: "Email"
+      no_account: "No account yet! "
+      password: "Password"
+      register_now: "Register Now"
+      sign_in: "Sign In"
+      title: "Sign In"
   shared:
     error_messages:
       error: "error"
