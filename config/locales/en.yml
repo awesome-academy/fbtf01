@@ -1,3 +1,32 @@
 en:
+  dictionary:
+    base_title: "Framgia Tour Booking System"
   layouts:
-    title: "Framgia Tour Booking System"
+    header:
+      booking_tours: "Framgia Tour Booking"
+      language:
+        en: "English"
+        language: "Language"
+        vi: "Vietnamese"
+      sign_in: "Sign In"
+      register: "Register"
+  shared:
+    error_messages:
+      error: "error"
+      form: "The form contains"
+  static_pages:
+    home:
+      welcome: "WELCOME TO FRAMGIA TOUR BOOKING SYSTEM"
+  users:
+    flash:
+      create_successful: "Create new user successfully"
+      create_failed: "Cannot create new user due to error(s)"
+    new:
+      address: "Address"
+      create_account: "Create Account"
+      email: "Email"
+      name: "Name"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      phone: "Phone"
+      title: "Register"

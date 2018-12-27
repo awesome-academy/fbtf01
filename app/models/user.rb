@@ -29,6 +29,6 @@ class User < ApplicationRecord
   validates :phone, presence: true,
     length: {
       minimum: Settings.users.phone.min_length,
-      maximum: Settings.user.phone.max_length
+      maximum: Settings.users.phone.max_length
     }, numericality: true
 end
