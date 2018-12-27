@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
-
   # callbacks
   before_action :load_user, only: :create
 
@@ -27,7 +25,7 @@ class SessionsController < ApplicationController
     @user = User.find_by email: params[:session][:email].downcase
     return if @user
 
-    flash[:danger] = t ".flash.user_not_found"
+    flash[:danger] = t "sessions.flash.user_not_found"
     redirect_to sign_in_path
   end
 end

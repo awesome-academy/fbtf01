@@ -1,4 +1,7 @@
 en:
+  application:
+    flash:
+      not_signed_in: "You need to sign in first"
   dictionary:
     base_title: "Framgia Tour Booking System"
   layouts:
@@ -12,11 +15,12 @@ en:
       profile: "Profile"
       settings: "Settings"
       sign_in: "Sign In"
+      sign_out: "Sign Out"
       register: "Register"
   sessions:
     flash:
-      sign_in_successful: "Sign in successful"
       sign_in_failed: "Invalid Email/Password combination"
+      sign_in_successful: "Sign in successful"
       user_not_found: "Email does not exist"
     new:
       email: "Email"
@@ -33,9 +37,20 @@ en:
     home:
       welcome: "WELCOME TO FRAMGIA TOUR BOOKING SYSTEM"
   users:
+    edit:
+      address: "Address"
+      email: "Email"
+      name: "Name"
+      phone: "Phone"
+      save: "Save Profile"
+      title: "Update Profile"
     flash:
-      create_successful: "Create new user successfully"
       create_failed: "Cannot create new user due to error(s)"
+      create_successful: "Create new user successfully"
+      incorrect_user: "You do not have permission to update this user profile"
+      update_profile_failed: "Cannot update user profile due to error(s)"
+      update_profile_successful: "User profile updated"
+      user_not_found: "User does not exist"
     new:
       address: "Address"
       create_account: "Create Account"
