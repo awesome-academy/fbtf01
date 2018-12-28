@@ -6,24 +6,48 @@ vi:
     base_title: "Hệ Thống Đặt Tour Du Lịch Framgia"
   layouts:
     header:
+      admin: "Quản Trị"
       bookings: "Đặt Tour"
       booking_tours: "Framgia Tour Booking"
       language:
         en: "Tiếng Anh"
         language: "Ngôn Ngữ"
         vi: "Tiếng Việt"
+      manage_bookings: "Quản Lý Đặt Tour"
+      manage_users: "Quản Lý Người Dùng"
+      manage_tours: "Quản Lý Tour"
+      manage_reviews: "Quản lý Bài Viết"
       profile: "Hồ Sơ"
       settings: "Cài Đặt"
       sign_in: "Đăng Nhập"
       sign_out: "Đăng Xuất"
       register: "Đăng Ký"
+  password_resets:
+    edit:
+      password: "Mật Khẩu"
+      password_confirmation: "Xác Nhận Mật Khẩu"
+      save: "Lưu"
+      title: "Đổi Mật Khẩu"
+    flash:
+      email_not_found: "Email không tồn tại"
+      password_empty: "Mật khẩu không thể bỏ trống"
+      password_reset_email_sent: "Link thay đổi mật khẩu đã được gửi đến địa chỉ email của bạn"
+      password_reset_expired: "Link đổi mật khẩu đã hết hạn sử dụng"
+      password_reset_success: "Đổi mật khẩu thành công"
+      user_not_found: "Người dùng không tồn tại"
+    new:
+      email: "Email"
+      submit: "Gửi"
+      title: "Đổi Mật Khẩu"
   sessions:
     flash:
+      already_signed_in: "Bạn đã ở trạng thái đăng nhập"
       sign_in_failed: "Email/Mật khẩu không hợp lệ"
       sign_in_successful: "Đăng nhập thành công"
       user_not_found: "Email không tồn tại"
     new:
       email: "Email"
+      forgot_password: "Quên mật khẩu"
       no_account: "Chưa có tài khoản! "
       password: "Mật Khẩu"
       register_now: "Đăng ký ngay"
@@ -42,15 +66,30 @@ vi:
       email: "Email"
       name: "Họ và Tên"
       phone: "Số Điện Thoại"
-      save: "Lưu Hồ Sơ"
-      title: "Cập Nhật Hồ Sơ"
+      save: "Cập Nhật Hồ Sơ"
+      title: "Chi Tiết Hồ Sơ"
+    edit_password:
+      password: "Mật Khẩu"
+      password_confirmation: "Xác Nhận Mật Khẩu"
+      save: "Cập Nhật Mật Khẩu"
+      title: "Đổi Mật Khẩu"
     flash:
+      already_signed_in: "Bạn đã ở trạng thái đăng nhập"
       create_failed: "Lỗi trong quá trình đăng ký tài khoản"
       create_successful: "Đăng ký tài khoản thành công"
+      delete_user_failed: "Lỗi trong quá trình xóa người dùng"
+      delete_user_successful: "Xóa người dùng thành công"
       incorrect_user: "Bạn không có quyền chỉnh sửa thông tin người dùng này"
+      update_password_failed: "Lỗi trong quá trình cập nhật mật khẩu"
+      update_password_successful: "Cập nhật mật khẩu thành công"
       update_profile_failed: "Lỗi trong quá trình cập nhật hồ sơ"
       update_profile_successful: "Cập nhật hồ sơ thành công"
+      user_not_admin: "Bạn cần có quyền quản trị để tiếp tục"
       user_not_found: "Người dùng không tồn tại"
+    index:
+      delete: "xóa"
+      sure: "Bạn chắc chắn muốn xóa?"
+      title: "Tất Cả Người Dùng"
     new:
       address: "Địa Chỉ"
       create_account: "Tạo Tài Khoản"
@@ -60,3 +99,22 @@ vi:
       password_confirmation: "Xác Nhận Mật Khẩu"
       phone: "Số Điện Thoại"
       title: "Đăng Ký"
+    show:
+      address: "Địa Chỉ"
+      email: "Email"
+      name: "Họ và Tên"
+      phone: "Số Điện Thoại"
+      title: "Hồ sơ của %{name}"
+    sidebar:
+      password: "Mật Khẩu"
+      profile: "Thông Tin"
+  user_mailer:
+    password_reset:
+      expiration: "Link thay đổi mật khẩu sẽ hết hạn sử dụng sau 5 phút."
+      instruction: "Để thay đổi mật khẩu, xin hãy nhấn vào link bên dưới: "
+      remind: "Nếu bạn không có yêu cầu đổi mật khẩu, xin hãy bỏ qua tin nhắn này."
+      reset: "Thay đổi mật khẩu"
+      subject: "Đổi Mật Khẩu"
+  will_paginate:
+    next_label: "Sau"
+    previous_label: "Trước"
