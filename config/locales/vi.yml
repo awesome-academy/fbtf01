@@ -33,6 +33,9 @@ vi:
     error_messages:
       error: "lỗi"
       form: "Đơn gồm"
+    sidebar:
+      password: "Mật Khẩu"
+      profile: "Thông Tin"
   static_pages:
     home:
       welcome: "CHÀO MỪNG BẠN ĐẾN VỚI FRAMGIA - HỆ THỐNG ĐẶT TOUR"
@@ -44,10 +47,17 @@ vi:
       phone: "Số Điện Thoại"
       save: "Lưu Hồ Sơ"
       title: "Cập Nhật Hồ Sơ"
+    edit_password:
+      password: "Mật Khẩu"
+      password_confirmation: "Xác Nhận Mật Khẩu"
+      save: "Lưu Mật Khẩu"
+      title: "Cập Nhật Mật Khẩu"
     flash:
       create_failed: "Lỗi trong quá trình đăng ký tài khoản"
       create_successful: "Đăng ký tài khoản thành công"
       incorrect_user: "Bạn không có quyền chỉnh sửa thông tin người dùng này"
+      update_password_failed: "Lỗi trong quá trình cập nhật mật khẩu"
+      update_password_successful: "Cập nhật mật khẩu thành công"
       update_profile_failed: "Lỗi trong quá trình cập nhật hồ sơ"
       update_profile_successful: "Cập nhật hồ sơ thành công"
       user_not_found: "Người dùng không tồn tại"

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # callbacks
   before_action :signed_in_user, :load_user, :correct_user,
-    only: [:edit, :update]
+    except: [:index, :new, :create]
 
   def index; end
 
@@ -30,6 +30,18 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = t ".flash.update_profile_failed"
       render :edit
+    end
+  end
+
+  def edit_password; end
+
+  def update_password
+    if @user.update_attributes user_params
+      flash[:success] = t ".flash.update_password_successful"
+      redirect_to edit_password_path
+    else
+      flash.now[:danger] = t ".flash.update_password_failed"
+      render :edit_password
     end
   end
 

@@ -1,0 +1,12 @@
+<div class="side-navigation-container">
+  <ul class="side-navigation">
+    <li class="side-navigation-item">
+        <%= link_to t(".profile"), edit_user_path(current_user),
+          class: "side-navigation-link" %>
+    </li>
+    <li class="side-navigation-item">
+        <%= link_to t(".password"), edit_password_path(current_user),
+          class: "side-navigation-link" %>
+    </li>
+  </ul>
+</div>

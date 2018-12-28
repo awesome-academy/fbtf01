@@ -33,6 +33,9 @@ en:
     error_messages:
       error: "error"
       form: "The form contains"
+    sidebar:
+      password: "Password"
+      profile: "Profile"
   static_pages:
     home:
       welcome: "WELCOME TO FRAMGIA TOUR BOOKING SYSTEM"
@@ -44,12 +47,19 @@ en:
       phone: "Phone"
       save: "Save Profile"
       title: "Update Profile"
+    edit_password:
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      save: "Save Password"
+      title: "Update Password"
     flash:
       create_failed: "Cannot create new user due to error(s)"
       create_successful: "Create new user successfully"
       incorrect_user: "You do not have permission to update this user profile"
+      update_password_failed: "Cannot update password due to error(s)"
+      update_password_successful: "Update password successfully"
       update_profile_failed: "Cannot update user profile due to error(s)"
-      update_profile_successful: "User profile updated"
+      update_profile_successful: "Update profile successfully"
       user_not_found: "User does not exist"
     new:
       address: "Address"

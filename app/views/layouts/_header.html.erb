@@ -10,11 +10,11 @@
             <%= t ".language.language" %> <b class="caret"></b>
           </button>
           <div class="dropdown-menu" aria-labelledby="languageDropDown">
-            <a class="dropdown-item"><%= link_to t(".language.en"),
-              request.query_parameters.merge(locale: :en) %></a>
+            <%= link_to t(".language.en"),
+              request.query_parameters.merge(locale: :en), class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item"><%= link_to t(".language.vi"),
-              request.query_parameters.merge(locale: :vi) %></a>
+            <%= link_to t(".language.vi"),
+              request.query_parameters.merge(locale: :vi), class: "dropdown-item" %>
           </div>
         </div>
         <% if signed_in? %>
@@ -25,9 +25,9 @@
               <%= t ".profile" %> <b class="caret"></b>
             </button>
             <div class="dropdown-menu" aria-labelledby="languageDropDown">
-              <a class="dropdown-item"><%= link_to t(".bookings"), "#" %></a>
+              <%= link_to t(".bookings"), "#", class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item"><%= link_to t(".settings"), edit_user_path(current_user) %></a>
+              <%= link_to t(".settings"), edit_user_path(current_user), class: "dropdown-item" %>
             </div>
           </div>
           <div class="header-tags">
