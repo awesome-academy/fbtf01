@@ -27,7 +27,7 @@
             <div class="dropdown-menu" aria-labelledby="languageDropDown">
               <a class="dropdown-item"><%= link_to t(".bookings"), "#" %></a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item"><%= link_to t(".settings"), "#" %></a>
+              <a class="dropdown-item"><%= link_to t(".settings"), edit_user_path(current_user) %></a>
             </div>
           </div>
           <div class="header-tags">
