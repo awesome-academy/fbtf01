@@ -1,6 +1,9 @@
 locales:
   available: ["en", "vi"]
   default: "en"
+locations:
+  paginate:
+    per_page: 5
 users:
   email:
     max_length: 250

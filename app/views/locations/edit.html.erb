@@ -1,0 +1,22 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @location do |location_form| %>
+      <%= render "shared/error_messages", object: location_form.object %>
+
+      <%= location_form.label :name, t(".name") %>
+      <%= location_form.text_field :name, class: "form-control" %>
+
+      <%= location_form.label :description, t(".description") %>
+      <%= location_form.text_area :description, rows: 10, class: "form-control" %>
+
+      <div><label><%= t ".url" %></label></div>
+      <%= location_form.fields_for :images do |image_form| %>
+        <%= render "images", f: image_form %>
+      <% end %>
+
+      <%= location_form.submit t(".save"), class: "btn btn-info btn-m" %>
+    <% end %>
+  </div>
+</div>
