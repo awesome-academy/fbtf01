@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   # enum
-  enum status: {reject: 0, approve: 1, pending: 2}
+  enum status: {pending: 0, approve: 1, cancel: 2}
 
   # relationships
   belongs_to :user

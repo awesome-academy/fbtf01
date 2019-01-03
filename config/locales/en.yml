@@ -6,24 +6,48 @@ en:
     base_title: "Framgia Tour Booking System"
   layouts:
     header:
+      admin: "Admin"
       bookings: "Bookings"
       booking_tours: "Framgia Tour Booking"
       language:
         en: "English"
         language: "Language"
         vi: "Vietnamese"
+      manage_bookings: "Manage Bookings"
+      manage_users: "Manage Users"
+      manage_tours: "Manage Tours"
+      manage_reviews: "Manage Reviews"
       profile: "Profile"
       settings: "Settings"
       sign_in: "Sign In"
       sign_out: "Sign Out"
       register: "Register"
+  password_resets:
+    edit:
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      save: "Save"
+      title: "Change Password"
+    flash:
+      email_not_found: "Email does not exist"
+      password_empty: "Password cannot be empty"
+      password_reset_email_sent: "A password reset link has been sent to your email address"
+      password_reset_expired: "The password reset link has been expired"
+      password_reset_success: "Reset password successfully"
+      user_not_found: "User does not exist"
+    new:
+      email: "Email"
+      submit: "Submit"
+      title: "Reset Password"
   sessions:
     flash:
+      already_signed_in: "You have already signed in"
       sign_in_failed: "Invalid Email/Password combination"
       sign_in_successful: "Sign in successful"
       user_not_found: "Email does not exist"
     new:
       email: "Email"
+      forgot_password: "Forgot password"
       no_account: "No account yet! "
       password: "Password"
       register_now: "Register Now"
@@ -42,15 +66,30 @@ en:
       email: "Email"
       name: "Name"
       phone: "Phone"
-      save: "Save Profile"
-      title: "Update Profile"
+      save: "Update Profile"
+      title: "Profile Details"
+    edit_password:
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      save: "Update Password"
+      title: "Change Password"
     flash:
+      already_signed_in: "You have already signed in"
       create_failed: "Cannot create new user due to error(s)"
       create_successful: "Create new user successfully"
+      delete_user_failed: "Cannot delete user due to error(s)"
+      delete_user_successful: "Delete user successfully"
       incorrect_user: "You do not have permission to update this user profile"
+      update_password_failed: "Cannot update password due to error(s)"
+      update_password_successful: "Update password successfully"
       update_profile_failed: "Cannot update user profile due to error(s)"
-      update_profile_successful: "User profile updated"
+      update_profile_successful: "Update profile successfully"
+      user_not_admin: "You must have administrator privilege to proceed"
       user_not_found: "User does not exist"
+    index:
+      delete: "delete"
+      sure: "Are you sure?"
+      title: "All Users"
     new:
       address: "Address"
       create_account: "Create Account"
@@ -60,3 +99,22 @@ en:
       password_confirmation: "Password Confirmation"
       phone: "Phone"
       title: "Register"
+    show:
+      address: "Address"
+      email: "Email"
+      name: "Name"
+      phone: "Phone"
+      title: "%{name}'s profile"
+    sidebar:
+      password: "Password"
+      profile: "Profile"
+  user_mailer:
+    password_reset:
+      expiration: "This link will expire in 5 minutes."
+      instruction: "To reset your password click the link below: "
+      remind: "If you did not request your password to be reset, please ignore this email."
+      reset: "Reset password"
+      subject: "Password reset"
+  will_paginate:
+    next_label: "Next"
+    previous_label: "Previous"

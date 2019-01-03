@@ -1,8 +1,8 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
-$dropdown-btn: #3AA7D8;
-$dropdown-border: #edede6;
+$light-sky-blue: #3AA7D8;
+$near-white: #edede6;
 
 /* universal */
 @mixin box_sizing {
@@ -33,6 +33,15 @@ h1 {
   text-align: center;
 }
 
+a {
+  color: $light-sky-blue;
+  text-decoration: none;
+  &:hover {
+    color: $light-sky-blue;
+    text-decoration: none;
+  }
+}
+
 /* header */
 header {
   margin-top: 1%;
@@ -50,17 +59,16 @@ header {
   font-weight: bold;
   &:hover {
     color: orangered;
-    text-decoration: none;
   }
 }
 
 .header-tags {
   width: 120px;
+  height: 35px;
   float: left;
 }
 
-.dropdown-toggle, #loginBtn {
-  color: $dropdown-btn;
+.dropdown-toggle {
   background-color: white;
 }
 
@@ -68,11 +76,7 @@ header {
   text-align: center;
   background: white;
   border-radius: 25px;
-  border: 1px solid $dropdown-border;
-  & > a {
-    color: $dropdown-btn;
-    text-decoration: none;
-  }
+  border: 1px solid $near-white;
 }
 
 .header-btn {
@@ -80,7 +84,7 @@ header {
 }
 
 .btn-m {
-  color: $dropdown-btn;
+  color: $light-sky-blue;
   background-color: white;
 }
 
@@ -120,6 +124,52 @@ input {
   }
 }
 
-#register-link {
+.sign-in-links {
   margin-top: 2%;
+}
+
+/* update profile sidebar */
+.side-navigation-container {
+  float: left;
+  min-height: 1px;
+}
+
+.side-navigation {
+  background: $near-white;
+  list-style: none;
+  border-radius: 1px;
+  overflow: hidden;
+  margin: 30px 0 0;
+  padding: 10px;
+}
+
+.side-navigation-item {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  font-weight: 500;
+  text-align: center;
+  display: list-item;
+  background-color: white;
+  &:hover {
+    background-color: $light-sky-blue;
+    & > a {
+      color: white;
+    }
+  }
+}
+
+.side-navigation-link {
+  display: block;
+  padding: 15px 25px;
+}
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }

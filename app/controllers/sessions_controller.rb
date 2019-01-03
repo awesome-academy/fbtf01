@@ -2,7 +2,12 @@ class SessionsController < ApplicationController
   # callbacks
   before_action :load_user, only: :create
 
-  def new; end
+  def new
+    return unless current_user
+
+    flash[:warning] = t ".flash.already_signed_in"
+    redirect_to root_path
+  end
 
   def create
     if @user.authenticate(params[:session][:password])
@@ -21,6 +26,7 @@ class SessionsController < ApplicationController
   end
 
   private
+
   def load_user
     @user = User.find_by email: params[:session][:email].downcase
     return if @user
