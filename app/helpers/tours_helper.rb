@@ -51,4 +51,15 @@ module ToursHelper
         params[:page], per_page: Settings.tours.paginate.per_page
     end
   end
+
+  def liked_review review
+    review.likes.each do |like|
+      return true if like.user_id == current_user.id
+    end
+    false
+  end
+
+  def current_user_like review
+    review.likes.each{|like| like if like.user_id == current_user.id}
+  end
 end

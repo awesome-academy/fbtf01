@@ -17,6 +17,8 @@ locations:
 reviews:
   content:
     row: 5
+  likes:
+    image_size: "50x28"
   paginate:
     per_page: 4
 tours:

@@ -12,9 +12,7 @@
     <a class="prev-slide" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next-slide" onclick="plusSlides(1)">&#10095;</a>
   </div>
-
   <%= render partial: "info", object: @tour %>
-
   <% if signed_in? %>
     <div class="col-md-6 col-md-offset-3 tour-reviews">
       <b><%= t ".your_review" %></b>
@@ -25,6 +23,10 @@
           <table>
             <tr class="th-review">
               <td id="current-user-review"><%= @review.content %></td>
+              <td id="like-group-<%= @review.id %>">
+                <%= render partial: "likes/like_count",
+                  locals: {review: @review} %>
+              </td>
             </tr>
           </table>
           <%= render partial: "reviews/edit_review", locals:
@@ -32,9 +34,9 @@
       <% else %>
         <%= render partial: "reviews/new_review", locals: {tour: @tour} %>
       <% end %>
+        </div>
     </div>
   <% end %>
-
   <div class="col-md-6 col-md-offset-3 tour-reviews">
     <b><%= t ".reviews" %></b>
   </div>
