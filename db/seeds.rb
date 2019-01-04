@@ -103,3 +103,17 @@ Tour.all.each do |tour|
     location_id = 1 if location_id > 10
   end
 end
+
+# Reviews
+user_id = 1
+Tour.all.each do |tour|
+  5.times do |n|
+    content = Faker::Lorem.paragraph_by_chars 256, false
+    Review.create!(
+      tour_id: tour.id,
+      user_id: user_id,
+      content: content)
+    user_id += 1
+    user_id = 1 if user_id > 22
+  end
+end

@@ -29,5 +29,6 @@ Rails.application.routes.draw do
     post "/total_price", to: "bookings#total_price", as: "total_price"
 
     resources :charges
+    resources :reviews
   end
 end

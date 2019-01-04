@@ -1,0 +1,30 @@
+<div class="col-md-6 col-md-offset-3">
+  <div><b><%= t ".description" %></b></div>
+  <div><%= @tour.description %></div>
+  <table class="tour-info">
+    <tr><th><%= t ".info" %></th></tr>
+    <tr>
+      <td>
+        <%= t ".locations" %>
+        <% @locations.each do |location| %>
+          <%= link_to "(#{location.name})", location_path(location) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= t ".min_passengers", value: @tour.min_passengers %></td>
+      <td><%= t ".max_passengers", value: @tour.max_passengers %></td>
+    </tr>
+    <tr>
+      <td><%= t ".date_from" %><%= l @tour.date_from, format: :datepicker %></td>
+      <td><%= t ".date_to" %><%= l @tour.date_to, format: :datepicker %></td>
+    </tr>
+    <tr>
+      <td><%= t ".price", value: @tour.price %></td>
+    </tr>
+  </table>
+  <% if signed_in? %>
+    <%= link_to t(".book_now"), new_booking_path(tour_id: @tour.id),
+      class: "btn btn-info btn-m header-btn" %>
+  <% end %>
+</div>

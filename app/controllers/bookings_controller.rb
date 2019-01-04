@@ -42,7 +42,6 @@ class BookingsController < ApplicationController
   def approve
     if @booking.approved!
       respond_to do |format|
-        format.html
         format.js
       end
     else
@@ -54,7 +53,6 @@ class BookingsController < ApplicationController
   def cancel
     if @booking.canceled!
       respond_to do |format|
-        format.html
         format.js
       end
     else

@@ -1,0 +1,7 @@
+<%= form_for tour.reviews.build, url: {action: "create",
+  controller: "reviews"} do |f| %>
+  <%= f.hidden_field :tour_id, value: tour.id %>
+  <%= f.text_area :content, rows: Settings.reviews.content.row,
+    class: "form-control" %>
+  <%= f.submit t(".review"), class: "btn btn-info btn-m" %>
+<% end %>

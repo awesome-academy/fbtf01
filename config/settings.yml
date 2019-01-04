@@ -14,9 +14,16 @@ locations:
     size: "100x100"
   paginate:
     per_page: 5
+reviews:
+  content:
+    row: 5
+  paginate:
+    per_page: 4
 tours:
   image:
     size: "700x350"
+  locations:
+    limit: 5
   paginate:
     per_page: 5
 users:

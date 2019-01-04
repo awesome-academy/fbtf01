@@ -77,6 +77,12 @@ class User < ApplicationRecord
     update_columns customer_id: customer.id
   end
 
+  # Return if user has reviewed a tour
+  def reviewed? tour
+    review ||= Review.find_by tour_id: tour.id, user_id: id
+    reviews.include? review
+  end
+
   private
   # Converts email to all lower-case.
   def downcase_email

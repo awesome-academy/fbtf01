@@ -1,0 +1,7 @@
+<%= form_for review, url: {action: "update", controller: "reviews"},
+  html: {class: "edit-review-form"}, remote: true do |f| %>
+  <%= f.hidden_field :id, value: review.id %>
+  <%= f.text_area :content, rows: Settings.reviews.content.row,
+    class: "form-control" %>
+  <%= f.submit t(".update"), class: "btn btn-info btn-m" %>
+<% end %>

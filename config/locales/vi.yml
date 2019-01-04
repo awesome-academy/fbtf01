@@ -132,6 +132,12 @@ vi:
       email: "Email"
       submit: "Gửi"
       title: "Đổi Mật Khẩu"
+  reviews:
+    flash:
+      create_review_failed: "Lỗi trong quá trình tạo bài viết"
+      create_review_successful: "Tạo bài viết thành công"
+      update_review_failed: "Lỗi trong quá trình cập nhật bài viết"
+      update_review_successful: "Cập nhật bài viết thành công"
   sessions:
     flash:
       already_signed_in: "Bạn đã ở trạng thái đăng nhập"
@@ -164,16 +170,15 @@ vi:
       datepicker: "%d/%m/%Y"
       datepicker_js: "yyyy-mm-dd"
   tours:
-    categories_bar:
-      all: "Tất Cả"
     flash:
       empty_search: "Không thể tìm kiếm rỗng"
       from_after_to: "Ngày bắt đầu không thể lớn hơn ngày kết thúc"
       tour_not_found: "Chuyến du lịch không tồn tại"
     index:
+      all: "Tất Cả"
       title: "Các Chuyến Du Lịch"
       tours_found: "%{count} chuyến du lịch được tìm thấy"
-    show:
+    info:
       book_now: "Đặt Ngay"
       date_from: "Từ: "
       date_to: "Đến: "
@@ -183,7 +188,13 @@ vi:
       max_passengers: "Tối Đa: %{value} người"
       min_passengers: "Tối Thiểu: %{value} người"
       price: "Giá: $%{value}"
+    show:
+      edit: "Sửa"
+      reviews: "Bài Viết"
+      review: "Đánh Giá"
       title: "%{name}"
+      update: "Cập Nhật"
+      your_review: "Bài Viết Của Bạn"
   users:
     edit:
       address: "Địa Chỉ"

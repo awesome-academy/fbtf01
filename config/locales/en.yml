@@ -136,6 +136,16 @@ en:
       email: "Email"
       submit: "Submit"
       title: "Reset Password"
+  reviews:
+    edit_review:
+      update: "Update"
+    flash:
+      create_review_failed: "Cannot create new review due to error(s)"
+      create_review_successful: "Create review successfully"
+      update_review_failed: "Cannot update review due to error(s)"
+      update_review_successful: "Update review successfully"
+    new_review:
+      review: "Review"
   sessions:
     flash:
       already_signed_in: "You have already signed in"
@@ -168,16 +178,15 @@ en:
       datepicker: "%d/%m/%Y"
       datepicker_js: "yyyy-mm-dd"
   tours:
-    categories_bar:
-      all: "All"
     flash:
       empty_search: "Search cannot be blank"
       from_after_to: "The From date cannot greater than the To date"
       tour_not_found: "Tour does not exist"
     index:
+      all: "All"
       title: "Tours"
       tours_found: "%{count} tours found"
-    show:
+    info:
       book_now: "Book Now"
       date_from: "From: "
       date_to: "To: "
@@ -187,7 +196,11 @@ en:
       max_passengers: "Max Participants: %{value}"
       min_passengers: "Min Participants: %{value}"
       price: "Price: $%{value}"
+    show:
+      edit: "Edit"
+      reviews: "Reviews"
       title: "%{name}"
+      your_review: "Your Review"
   users:
     edit:
       address: "Address"

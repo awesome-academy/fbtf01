@@ -1,0 +1,6 @@
+<% unless review.user == current_user %>
+  <tr class="th-review">
+    <th><%= review.user.name %></th>
+    <td><%= review.content %></td>
+  </tr>
+<% end %>

@@ -338,3 +338,30 @@ input {
 .status-approved {
   color: $light-green;
 }
+
+/* Tour Reviews */
+.tour-reviews {
+  margin-top: 5%;
+}
+
+.th-review {
+  width: 100%;
+  & > th, td {
+    border-top: 1px solid $light-grey;
+    padding: 15px;
+  }
+  & > th {
+    width: 20%;
+  }
+  & > td {
+    text-align: justify;
+  }
+  &:nth-child(even) {
+    background-color: $light-grey;
+  }
+}
+
+/* Review form */
+.edit-review-form {
+  display: none;
+}
