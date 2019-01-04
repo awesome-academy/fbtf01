@@ -1,8 +1,6 @@
-<% if current_user == booking.user || current_user.admin? %>
-  <li>
-    <%= link_to t(".booking_for", tour_name: booking.tour.name,
-      created_at: booking.created_at, user_name: booking.user.name,
-      status: t("activerecord.attributes.booking.status.#{booking.status}")),
-      booking_path(booking) %>
-  </li>
-<% end %>
+<li>
+  <%= link_to t(".booking_for", tour_name: booking.tour.name,
+    created_at: booking.created_at, user_name: booking.user.name,
+    status: t("activerecord.attributes.booking.status.#{booking.status}")),
+    booking_path(booking) %>
+</li>

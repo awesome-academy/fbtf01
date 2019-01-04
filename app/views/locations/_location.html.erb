@@ -4,7 +4,7 @@
       size: Settings.locations.image.size %>
   <% end %>
   <%= link_to location.name, location_path(location) %>
-  <% if user_signed_in? && current_user.admin? %>
+  <% if can? [:update, :destroy], Location %>
     | <%= link_to t(".edit"), edit_location_path(location) %>
     | <%= link_to t(".delete"), location, method: :delete,
       data: {confirm: t(".sure")} %>

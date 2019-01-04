@@ -1,13 +1,11 @@
 class ChargesController < ApplicationController
-  before_action :load_booking, only: :create
-
-  def new; end
+  load_and_authorize_resource :booking
 
   def create
     card = load_customer_card
     create_charge card, @booking
 
-    @booking.update_column :status, Booking.statuses[:approved]
+    @booking.approved!
     flash[:success] = t ".checkout_successful"
     redirect_to bookings_path
   rescue Stripe::CardError => e
@@ -16,14 +14,6 @@ class ChargesController < ApplicationController
   end
 
   private
-
-  def load_booking
-    @booking = Booking.find_by id: params[:booking_id]
-    return if @booking
-
-    flash[:danger] = t "charges.flash.booking_not_found"
-    redirect_to root_path
-  end
 
   def load_customer_card
     customer = Stripe::Customer.retrieve current_user.customer_id

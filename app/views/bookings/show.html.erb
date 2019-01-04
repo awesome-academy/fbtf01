@@ -5,11 +5,11 @@
     <table class="info-group">
       <%= render partial: "info", locals: {booking: @booking} %>
     </table>
-    <% if current_user.admin? %>
+    <% if can? [:approve, :cancel], Booking %>
       <div class="approve-cancel-group">
         <%= render partial: "approve_cancel", locals: {booking: @booking} %>
       </div>
-    <% elsif @booking.pending? && @booking.user == current_user %>
+    <% elsif @booking.pending? %>
       <div class="checkout-group">
         <%= render partial: "checkout", locals: {booking: @booking} %>
       </div>

@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do
+    respond_to do |format|
+      format.html do
+        redirect_to root_path, alert: t("errors.messages.access_denied")
+      end
+    end
+  end
+
   protected
 
   def admin_user

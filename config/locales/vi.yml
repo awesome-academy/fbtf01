@@ -68,6 +68,9 @@ vi:
       checkout_successful: "Thanh toán đặt tour thành công"
   dictionary:
     base_title: "Hệ Thống Đặt Tour Du Lịch Framgia"
+  errors:
+    messages:
+      access_denied: "Bạn không có quyền truy cập vào trang này."
   layouts:
     header:
       admin: "Quản Trị"

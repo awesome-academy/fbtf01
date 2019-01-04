@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
-  # callbacks
-  before_action :authenticate_user!
-  before_action :load_user, except: :index
-  before_action :admin_user
+  load_and_authorize_resource
 
   def index
-    @users = User.newest.paginate page: params[:page],
+    @users = @users.paginate page: params[:page],
       per_page: Settings.users.paginate.per_page
   end
 
@@ -18,15 +15,5 @@ class UsersController < ApplicationController
       flash[:danger] = t ".flash.delete_user_failed"
     end
     redirect_to users_path
-  end
-
-  private
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-
-    flash[:danger] = t "users.flash.user_not_found"
-    redirect_to root_path
   end
 end
