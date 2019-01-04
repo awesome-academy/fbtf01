@@ -9,7 +9,8 @@
       <%= location_form.text_field :name, class: "form-control" %>
 
       <%= location_form.label :description, t(".description") %>
-      <%= location_form.text_area :description, rows: 10, class: "form-control" %>
+      <%= location_form.text_area :description,
+        rows: Settings.locations.description.row, class: "form-control" %>
 
       <div><label><%= t ".url" %></label></div>
       <%= location_form.fields_for :images do |image_form| %>

@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     end
     resources :password_resets, except: [:index, :show, :destroy]
     resources :locations
+    resources :tours, only: [:index, :show]
   end
 end

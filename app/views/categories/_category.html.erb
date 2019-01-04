@@ -1,0 +1,7 @@
+<% if category.parent_id == parent_id %>
+  <li class="dropdown-item">
+    <%= link_to t("activerecord.attributes.category.name.#{category.name}"),
+      tours_path(category_id: category.id) %>
+  </li>
+  <div class="dropdown-divider"></div>
+<% end %>

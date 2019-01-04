@@ -1,5 +1,14 @@
 vi:
   activerecord:
+    attributes:
+      category:
+        name:
+          Cultural: "Văn Hóa"
+          Discovery: "Khám Phá"
+          Festival: "Lễ Hội"
+          Historical: "Lịch Sử"
+          Christmas: "Giáng Sinh"
+          New Year: "Năm Mới"
     errors:
       models:
         location:
@@ -100,6 +109,35 @@ vi:
   static_pages:
     home:
       welcome: "CHÀO MỪNG BẠN ĐẾN VỚI FRAMGIA - HỆ THỐNG ĐẶT TOUR"
+    search_tours:
+      from: "Từ"
+      search: "Tìm Kiếm"
+      to: "Đến"
+      wanna_go: "Bạn muốn đi đâu?"
+  time:
+    formats:
+      datepicker: "%d/%m/%Y"
+      datepicker_js: "yyyy-mm-dd"
+  tours:
+    categories_bar:
+      all: "Tất Cả"
+    flash:
+      empty_search: "Không thể tìm kiếm rỗng"
+      from_after_to: "Ngày bắt đầu không thể lớn hơn ngày kết thúc"
+      tour_not_found: "Chuyến du lịch không tồn tại"
+    index:
+      title: "Các Chuyến Du Lịch"
+      tours_found: "%{count} chuyến du lịch được tìm thấy"
+    show:
+      date_from: "Từ: %{value}"
+      date_to: "Đến: %{value}"
+      description: "Mô Tả: "
+      info: "Thông Tin: "
+      locations: "Địa Điểm: "
+      max_passengers: "Tối Đa: %{value} người"
+      min_passengers: "Tối Thiểu: %{value} người"
+      price: "Giá: $%{value}"
+      title: "%{name}"
   users:
     edit:
       address: "Địa Chỉ"

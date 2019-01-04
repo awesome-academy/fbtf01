@@ -4,17 +4,8 @@
 <div class="row">
   <div class="col-md-15">
     <div class="slideshow-container">
-      <% @location.images.each do |image| %>
-        <% if image == @location.images.first %>
-          <div class="mySlides" style="display: block">
-              <%= image_tag image.url.to_s, size: "700x350" %>
-          </div>
-        <% else %>
-          <div class="mySlides">
-              <%= image_tag image.url.to_s, size: "700x350" %>
-          </div>
-        <% end %>
-      <% end %>
+      <%= render partial: "images/image", collection: @location.images,
+        locals: {first_image: @location.images.first} %>
       <a class="prev-slide" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next-slide" onclick="plusSlides(1)">&#10095;</a>
     </div>

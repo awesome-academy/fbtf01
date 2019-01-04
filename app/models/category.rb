@@ -4,4 +4,7 @@ class Category < ApplicationRecord
     foreign_key: :parent_id, optional: true
 
   has_many :tours, dependent: :destroy
+
+  # scopes
+  scope :alphabetical, ->{order :name}
 end

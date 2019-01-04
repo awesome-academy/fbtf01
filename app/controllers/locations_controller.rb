@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
   before_action :signed_in_user, :admin_user, except: [:index, :show]
 
   def index
-    @locations = Location.created_at_descending.paginate page: params[:page],
+    @locations = Location.newest.paginate page: params[:page],
       per_page: Settings.locations.paginate.per_page
   end
 

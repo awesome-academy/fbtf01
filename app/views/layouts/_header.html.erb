@@ -3,6 +3,10 @@
     <%= link_to t(".booking_tours"), root_path, id: "logo" %>
     <nav>
       <div class="nav navbar-nav navbar-right">
+        <div class="header-tags">
+          <%= link_to t(".all_tours"), tours_path,
+            class: "btn dropdown-toggle btn-m header-tags" %>
+        </div>
         <div class="dropdown header-tags">
           <button class="btn dropdown-toggle btn-m" type="button"
             id="languageDropDown" data-toggle="dropdown" aria-haspopup="true"

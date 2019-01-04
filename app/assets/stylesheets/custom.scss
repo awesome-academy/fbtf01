@@ -3,6 +3,7 @@
 
 $light-sky-blue: #3AA7D8;
 $near-white: #edede6;
+$light-grey: #dfe6e9;
 
 /* universal */
 @mixin box_sizing {
@@ -163,8 +164,8 @@ input {
   padding: 15px 25px;
 }
 
-/* Users, Locations index */
-.users, .locations {
+/* Users, Locations, Tours index */
+.users, .locations, .tours {
   list-style: none;
   margin: 0;
   li {
@@ -242,4 +243,69 @@ input {
 
 .field {
   text-align: center;
+}
+
+/* Category dropdown */
+.dropdown-on-hover {
+  width: 100px;
+  height: 35px;
+  float: left;
+  text-align: center;
+  &:hover {
+    .dropdown-menu {
+      display: block;
+      & > li > a:hover {
+        color: $light-sky-blue;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/* Records searched flash */
+.search-success {
+  width: 392px;
+  text-align: center;
+  float: none;
+}
+
+/* Search form in home page */
+.search-form {
+  background-color: $light-grey;
+  border-radius: 2px;
+  padding: 16px;
+  height: 72px;
+}
+
+.search-input {
+  float: left;
+  position: relative;
+  width: 300px;
+  text-align: left;
+  @include box_sizing;
+}
+
+.search-form-input {
+  height: 44px;
+  border-color: white;
+  border-width: 1px;
+  padding-right: 8px;
+  width: 100%;
+}
+
+.datepicker-input {
+  float: left;
+  width: 150px;
+}
+
+.search-form-submit {
+  color: white;
+  background-color: $light-sky-blue;
+  width: 100px;
+  float: left;
+}
+
+/* Tour information */
+.tour-info {
+  margin-top: 10%;
 }

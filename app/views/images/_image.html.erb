@@ -1,0 +1,9 @@
+<% if image == first_image %>
+  <div class="mySlides" style="display: block">
+      <%= image_tag image.url.to_s, size: Settings.tours.image.size %>
+  </div>
+<% else %>
+  <div class="mySlides">
+      <%= image_tag image.url.to_s, size: Settings.tours.image.size %>
+  </div>
+<% end %>
