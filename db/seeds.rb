@@ -1,16 +1,18 @@
 # Users
+email = "tour_booking_admin@framgia.com"
 User.create!(
   name: "Admin",
-  email: "tour_booking_admin@framgia.com",
+  email: email,
   password: "foobar123",
   password_confirmation: "foobar123",
   address: "Framgia Inc.",
   phone: "0123456789",
   role: 1)
 
+email = "nguyen.luong.huy@framgia.com"
 User.create!(
   name: "Nguyen Luong Huy",
-  email: "nguyen.luong.huy@framgia.com",
+  email: email,
   password: "foobar123",
   password_confirmation: "foobar123",
   address: "Framgia Inc.",
@@ -77,7 +79,7 @@ Category.create!(
   date_to = Faker::Date.between 3.days.from_now, 7.days.from_now
   min_passengers = rand 5..10
   max_passengers = min_passengers + 10
-  price = rand 300..600
+  price = rand 50..200
   category_id = rand 3..6
   Tour.create!(
     name: name,

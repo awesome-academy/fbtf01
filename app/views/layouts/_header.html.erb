@@ -38,9 +38,9 @@
                 <%= link_to t(".manage_locations"), locations_path,
                   class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to t(".manage_tours"), "#", class: "dropdown-item" %>
+                <%= link_to t(".manage_tours"), tours_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to t(".manage_bookings"), "#", class: "dropdown-item" %>
+                <%= link_to t(".manage_bookings"), bookings_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to t(".manage_reviews"), "#", class: "dropdown-item" %>
               </div>
@@ -53,7 +53,7 @@
               <%= t ".profile" %> <b class="caret"></b>
             </button>
             <div class="dropdown-menu" aria-labelledby="languageDropDown">
-              <%= link_to t(".bookings"), "#", class: "dropdown-item" %>
+              <%= link_to t(".bookings"), bookings_path, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= link_to t(".settings"), edit_user_path(current_user), class: "dropdown-item" %>
             </div>

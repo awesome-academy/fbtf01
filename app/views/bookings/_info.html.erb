@@ -1,0 +1,38 @@
+<tr>
+  <th><%= t ".customer_name" %></th>
+  <td><%= booking.user.name %></td>
+</tr>
+<tr>
+  <th><%= t ".tour_name" %></th>
+  <td><%= booking.tour.name %></td>
+</tr>
+<tr>
+  <th><%= t ".number_passengers" %></th>
+  <td><%= booking.number_passengers %></td>
+</tr>
+<tr>
+  <th><%= t ".locations" %></th>
+  <td>
+    <% booking.tour.locations.each do |location| %>
+      <%= link_to "(#{location.name})", location_path(location) %>
+    <% end %>
+  </td>
+</tr>
+<tr>
+  <th><%= t ".date_from" %></th>
+  <td><%= l booking.tour.date_from, format: :datepicker %></td>
+</tr>
+<tr>
+  <th><%= t ".date_to" %></th>
+  <td><%= l booking.tour.date_to, format: :datepicker %></td>
+</tr>
+<tr>
+  <th><%= t ".total_price" %></th>
+  <td>$<%= booking.total_price %></td>
+</tr>
+<tr>
+  <th><%= t ".status" %></th>
+  <td id="booking-status" class="status-<%= booking.status %>">
+    <%= t "activerecord.attributes.booking.status.#{booking.status}" %>
+  </td>
+</tr>

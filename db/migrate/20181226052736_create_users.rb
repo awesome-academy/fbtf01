@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :reset_digest
       t.datetime :reset_sent_at
+      t.string :customer_id
       t.timestamps
     end
 

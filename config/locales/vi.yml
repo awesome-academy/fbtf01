@@ -1,6 +1,11 @@
 vi:
   activerecord:
     attributes:
+      booking:
+        status:
+          approved: "Xác Nhận"
+          canceled: "Hủy Bỏ"
+          pending: "Chờ Duyệt"
       category:
         name:
           Cultural: "Văn Hóa"
@@ -18,12 +23,52 @@ vi:
   application:
     flash:
       not_signed_in: "Bạn cần đăng nhập trước"
+  bookings:
+    approve_cancel:
+      approve: "Xác Nhận"
+      cancel: "Hủy"
+    booking:
+      booking_for: "Đặt Tour: %{tour_name} (Khởi tạo lúc: %{created_at}). Trạng Thái: %{status}. Bởi: %{user_name}"
+    checkout:
+      cancel: "Hủy"
+      checkout: "Thanh Toán"
+    flash:
+      approve_booking_failed: "Lỗi xảy ra trong quá trình xác nhận tour đặt"
+      booking_not_found: "Đặt tour không tồn tại"
+      cancel_booking_failed: "Lỗi xảy ra trong quá trình hủy tour đặt"
+      create_booking_failed: "Lỗi xảy ra trong quá trình đặt tour"
+      create_booking_successful: "Đặt tour thành công"
+      not_correct_user: "Bạn không thể xem thông tin đặt tour này"
+      objects_not_found: "Người dùng hoặc tour không tồn tại"
+      tour_not_found: "Tour không tồn tại"
+    index:
+      title: "Tất Cả Tour Đã Đặt"
+    info:
+      customer_name: "Tên Khách Hàng: "
+      date_from: "Từ Ngày: "
+      date_to: "Đến Ngày: "
+      number_passengers: "Số Hành Khách: "
+      status: "Trạng Thái Đặt Tour: "
+      total_price: "Tổng Cộng: "
+      tour_name: "Tên Tour: "
+    new:
+      save: "Lưu"
+      number_passengers: "Số hành khách"
+      title: "Đặt Tour Du Lịch"
+      total_price: "Tổng Cộng: "
+    show:
+      title: "Thông Tin Đặt Tour"
+  charges:
+    create:
+      checkout_failed: "Không thể thanh toán do: %{e}"
+      checkout_successful: "Thanh toán đặt tour thành công"
   dictionary:
     base_title: "Hệ Thống Đặt Tour Du Lịch Framgia"
   layouts:
     header:
       admin: "Quản Trị"
-      bookings: "Đặt Tour"
+      all_tours: "Tất cả Tour"
+      bookings: "Tour Đã Đặt"
       booking_tours: "Framgia Tour Booking"
       language:
         en: "Tiếng Anh"
@@ -129,8 +174,9 @@ vi:
       title: "Các Chuyến Du Lịch"
       tours_found: "%{count} chuyến du lịch được tìm thấy"
     show:
-      date_from: "Từ: %{value}"
-      date_to: "Đến: %{value}"
+      book_now: "Đặt Ngay"
+      date_from: "Từ: "
+      date_to: "Đến: "
       description: "Mô Tả: "
       info: "Thông Tin: "
       locations: "Địa Điểm: "

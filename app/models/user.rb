@@ -35,8 +35,10 @@ class User < ApplicationRecord
   # callbacks
   before_save :downcase_email
 
+  after_commit :assign_customer_id, on: :create
+
   # scopes
-  scope :created_at_descending, ->{order(created_at: :desc)}
+  scope :newest, ->{order created_at: :desc}
 
   class << self
     # Returns the hash digest of the given string.
@@ -67,6 +69,12 @@ class User < ApplicationRecord
   # Returns true if a password reset has expired.
   def password_reset_expired?
     reset_sent_at < Settings.users.password.reset_expired.minutes.ago
+  end
+
+  # Create Stripe customer id when create new account
+  def assign_customer_id
+    customer = Stripe::Customer.create email: email
+    update_columns customer_id: customer.id
   end
 
   private

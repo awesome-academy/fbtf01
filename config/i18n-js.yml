@@ -16,5 +16,5 @@
 # the following configuration to something like this:
 #
 translations:
-  - file: 'public/javascripts/datepicker.js'
-    only: '*.time.formats.*'
+  - file: "public/javascripts/datepicker.js"
+    only: "*.time.formats.*"
