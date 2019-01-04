@@ -18,7 +18,7 @@ User.create!(
   role: 0)
 
 20.times do |n|
-  name  = Faker::Name.name
+  name = Faker::OnePiece.character
   email = Faker::Internet.email
   password = "password"
   address = Faker::Address.full_address
@@ -31,4 +31,19 @@ User.create!(
     address: address,
     phone: phone,
     role: 0)
+end
+
+20.times do |n|
+  name = Faker::Nation.capital_city
+  description = Faker::Lorem.paragraph_by_chars 256, false
+  location = Location.create!(
+    name: name,
+    description: description)
+  3.times do |n|
+    image = Image.new location_id: location.id
+    image_src = File.open File.join(Rails.root, "public/seed/#{n + 1}.jpg")
+    src_file = File.new image_src
+    image.url = src_file
+    image.save!
+  end
 end

@@ -1,4 +1,11 @@
 vi:
+  activerecord:
+    errors:
+      models:
+        location:
+          attributes:
+            base:
+              invalid_images_number: "Cần có ít nhất 1 tấm hình"
   application:
     flash:
       not_signed_in: "Bạn cần đăng nhập trước"
@@ -14,6 +21,7 @@ vi:
         language: "Ngôn Ngữ"
         vi: "Tiếng Việt"
       manage_bookings: "Quản Lý Đặt Tour"
+      manage_locations: "Quản Lý Điểm Du Lịch"
       manage_users: "Quản Lý Người Dùng"
       manage_tours: "Quản Lý Tour"
       manage_reviews: "Quản lý Bài Viết"
@@ -22,6 +30,37 @@ vi:
       sign_in: "Đăng Nhập"
       sign_out: "Đăng Xuất"
       register: "Đăng Ký"
+  locations:
+    edit:
+      description: "Mô Tả"
+      name: "Tên địa điểm"
+      save: "Lưu"
+      title: "Sửa Địa Điểm Du Lịch"
+      url: "File Hình Ảnh"
+    flash:
+      create_location_failed: "Lỗi trong quá trình thêm địa điểm du lịch"
+      create_location_successful: "Thêm địa điểm du lịch thành công"
+      delete_location_failed: "Lỗi trong quá trình xóa địa điểm du lịch"
+      delete_location_successful: "Xóa địa điểm du lịch thành công"
+      location_not_found: "Địa điểm du lịch không tồn tại"
+      update_location_failed: "Lỗi trong quá trình cập nhật địa điểm du lịch"
+      update_location_successful: "Cập nhật địa điểm du lịch thành công"
+    images:
+      delete: "Xóa"
+    index:
+      add_location: "Tạo mới"
+      delete: "Xóa"
+      edit: "Sửa"
+      sure: "Bạn chắc chắn muốn xóa?"
+      title: "Tất Cả Điểm Du Lịch"
+    new:
+      description: "Mô Tả"
+      name: "Tên địa điểm"
+      save: "Lưu"
+      title: "Thêm địa điểm du lịch"
+      url: "File Hình Ảnh"
+    show:
+      title: "%{name}"
   password_resets:
     edit:
       password: "Mật Khẩu"
@@ -44,6 +83,7 @@ vi:
       already_signed_in: "Bạn đã ở trạng thái đăng nhập"
       sign_in_failed: "Email/Mật khẩu không hợp lệ"
       sign_in_successful: "Đăng nhập thành công"
+      user_not_admin: "Bạn cần có quyền quản trị để tiếp tục"
       user_not_found: "Email không tồn tại"
     new:
       email: "Email"

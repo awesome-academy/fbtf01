@@ -1,4 +1,11 @@
 en:
+  activerecord:
+    errors:
+      models:
+        location:
+          attributes:
+            base:
+              invalid_images_number: "Must have at least 1 image"
   application:
     flash:
       not_signed_in: "You need to sign in first"
@@ -14,6 +21,7 @@ en:
         language: "Language"
         vi: "Vietnamese"
       manage_bookings: "Manage Bookings"
+      manage_locations: "Manage Locations"
       manage_users: "Manage Users"
       manage_tours: "Manage Tours"
       manage_reviews: "Manage Reviews"
@@ -22,6 +30,37 @@ en:
       sign_in: "Sign In"
       sign_out: "Sign Out"
       register: "Register"
+  locations:
+    edit:
+      description: "Description"
+      name: "Name"
+      save: "Save"
+      title: "Edit Location"
+      url: "Image Files"
+    flash:
+      create_location_failed: "Add location failed due to error(s)"
+      create_location_successful: "Add location successfully"
+      delete_location_failed: "Delete location failed due to error(s)"
+      delete_location_successful: "Delete location successfully"
+      location_not_found: "Location does not exist"
+      update_location_failed: "Update location failed due to error(s)"
+      update_location_successful: "Update location successfully"
+    images:
+      delete: "Delete"
+    index:
+      add_location: "Add Location"
+      delete: "Delete"
+      edit: "Edit"
+      sure: "Are you sure?"
+      title: "All Locations"
+    new:
+      description: "Description"
+      name: "Name"
+      save: "Save"
+      title: "Add Location"
+      url: "Image Files"
+    show:
+      title: "%{name}"
   password_resets:
     edit:
       password: "Password"
@@ -44,6 +83,7 @@ en:
       already_signed_in: "You have already signed in"
       sign_in_failed: "Invalid Email/Password combination"
       sign_in_successful: "Sign in successful"
+      user_not_admin: "You must have administrator privilege to proceed"
       user_not_found: "Email does not exist"
     new:
       email: "Email"
