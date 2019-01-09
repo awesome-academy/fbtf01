@@ -2,22 +2,11 @@
 <h1><%= t ".title" %></h1>
 <%= will_paginate %>
 <ul class="locations">
-<% if signed_in? && current_user.admin? %>
-  <%= link_to t(".add_location"), new_location_path, class: "btn btn-info btn-m"%>
-<% end %>
-<% @locations.each do |location| %>
-  <li>
-    <% unless location.images.first.nil? %>
-      <%= image_tag location.images.first.url.to_s, size: "100x100" %>
-    <% end %>
-    <%= link_to location.name, location_path(location) %>
-    <% if signed_in? && current_user.admin? %>
-      | <%= link_to t(".edit"), edit_location_path(location) %>
-      | <%= link_to t(".delete"), location, method: :delete,
-        data: {confirm: t(".sure")} %>
-    <% end %>
-  </li>
-<% end %>
+  <% if signed_in? && current_user.admin? %>
+    <%= link_to t(".add_location"), new_location_path,
+      class: "btn btn-info btn-m"%>
+  <% end %>
+  <%= render @locations %>
 </ul>
 <%= will_paginate %>
 

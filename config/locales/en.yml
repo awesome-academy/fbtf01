@@ -1,5 +1,14 @@
 en:
   activerecord:
+    attributes:
+      category:
+        name:
+          Cultural: "Cultural"
+          Discovery: "Discovery"
+          Festival: "Festival"
+          Historical: "Historical"
+          Christmas: "Christmas"
+          New Year: "New Year"
     errors:
       models:
         location:
@@ -100,6 +109,35 @@ en:
   static_pages:
     home:
       welcome: "WELCOME TO FRAMGIA TOUR BOOKING SYSTEM"
+    search_tours:
+      from: "From"
+      search: "Search"
+      to: "To"
+      wanna_go: "Where do you want to go?"
+  time:
+    formats:
+      datepicker: "%d/%m/%Y"
+      datepicker_js: "yyyy-mm-dd"
+  tours:
+    categories_bar:
+      all: "All"
+    flash:
+      empty_search: "Search cannot be blank"
+      from_after_to: "The From date cannot greater than the To date"
+      tour_not_found: "Tour does not exist"
+    index:
+      title: "Tours"
+      tours_found: "%{count} tours found"
+    show:
+      date_from: "From: "
+      date_to: "To: "
+      description: "Description: "
+      info: "Information: "
+      locations: "Locations: "
+      max_passengers: "Max Participants: %{value}"
+      min_passengers: "Min Participants: %{value}"
+      price: "Price: $%{value}"
+      title: "%{name}"
   users:
     edit:
       address: "Address"

@@ -13,7 +13,7 @@ class Location < ApplicationRecord
   validate :check_image_min_numbers, on: :update
 
   # scopes
-  scope :created_at_descending, ->{order(created_at: :desc)}
+  scope :newest, ->{order created_at: :desc}
 
   private
 

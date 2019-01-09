@@ -2,6 +2,15 @@ locales:
   available: ["en", "vi"]
   default: "en"
 locations:
+  description:
+    row: 10
+  image:
+    size: "100x100"
+  paginate:
+    per_page: 5
+tours:
+  image:
+    size: "700x350"
   paginate:
     per_page: 5
 users:

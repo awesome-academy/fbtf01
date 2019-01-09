@@ -1,0 +1,10 @@
+<% if category_navbar.parent_id.nil? %>
+  <div class="dropdown dropdown-on-hover">
+    <%= link_to t("activerecord.attributes.category.name.#{category_navbar.name}"),
+      "#" %>
+    <ul class="dropdown-menu">
+      <%= render partial: "categories/category", collection: @categories,
+        locals: {parent_id: category_navbar.id} %>
+    </ul>
+  </div>
+<% end %>

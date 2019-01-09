@@ -1,0 +1,41 @@
+<%= javascript_include_tag("slideshow.js") %>
+<% provide :title, t(".title", name: @tour.name) %>
+<h1><%= t ".title", name: @tour.name %></h1>
+<div class="row">
+  <div class="slideshow-container">
+    <% images = [] %>
+    <% @tour.locations.each do |location| %>
+      <% location.images.each {|image| images << image} %>
+    <% end %>
+    <%= render partial: "images/image", collection: images,
+        locals: {first_image: images.first} %>
+    <a class="prev-slide" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next-slide" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <div><b><%= t ".description" %></b></div>
+    <div><%= @tour.description %></div>
+    <table class="tour-info">
+      <tr><th><%= t ".info" %></th></tr>
+      <tr>
+        <td>
+          <%= t ".locations" %>
+          <% @tour.locations.each do |location| %>
+            <%= link_to "(#{location.name})", location_path(location) %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= t ".min_passengers", value: @tour.min_passengers %></td>
+        <td><%= t ".max_passengers", value: @tour.max_passengers %></td>
+      </tr>
+      <tr>
+        <td><%= t ".date_from" %><%= l @tour.date_from, format: :datepicker %></td>
+        <td><%= t ".date_to" %><%= l @tour.date_to, format: :datepicker %></td>
+      </tr>
+      <tr>
+        <td><%= t ".price", value: @tour.price %></td>
+      </tr>
+    </table>
+  </div>
+</div>
