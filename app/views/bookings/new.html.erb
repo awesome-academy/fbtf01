@@ -1,0 +1,24 @@
+<%= javascript_include_tag("calculate_total_price.js") %>
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @booking do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.hidden_field :tour_id, value: @tour.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :price, value: @tour.price %>
+
+      <%= f.label :number_passengers, t(".number_passengers") %>
+      <%= f.number_field :number_passengers,
+        min: Settings.bookings.number_passengers.min,
+        max: Settings.bookings.number_passengers.max, class: "form-control" %>
+
+      <%= f.label :total_price, t(".total_price") %>
+      <%= f.text_field :total_price, readonly: true, class: "form-control" %>
+
+      <%= f.submit t(".save"), class: "btn btn-info btn-m" %>
+    <% end %>
+  </div>
+</div>

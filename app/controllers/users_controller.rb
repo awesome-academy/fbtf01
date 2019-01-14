@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     only: [:edit, :update, :edit_password, :update_password]
 
   def index
-    @users = User.created_at_descending.paginate page: params[:page],
+    @users = User.newest.paginate page: params[:page],
       per_page: Settings.users.paginate.per_page
   end
 

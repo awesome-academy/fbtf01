@@ -4,6 +4,9 @@
 $light-sky-blue: #3AA7D8;
 $near-white: #edede6;
 $light-grey: #dfe6e9;
+$light-red: #eb4d4b;
+$light-yellow: #f9ca24;
+$light-green: #6ab04c;
 
 /* universal */
 @mixin box_sizing {
@@ -164,8 +167,8 @@ input {
   padding: 15px 25px;
 }
 
-/* Users, Locations, Tours index */
-.users, .locations, .tours {
+/* Users, Locations, Tours, Bookings index */
+.users, .locations, .tours, .bookings {
   list-style: none;
   margin: 0;
   li {
@@ -308,4 +311,30 @@ input {
 /* Tour information */
 .tour-info {
   margin-top: 10%;
+}
+
+/* Booking information */
+.info-group {
+  width: 100%;
+}
+
+.checkout-group {
+  text-align: center;
+  margin: 5% 0;
+}
+
+.stripe-checkout-btn {
+  float: left;
+}
+
+.status-canceled {
+  color: $light-red;
+}
+
+.status-pending {
+  color: $light-yellow;
+}
+
+.status-approved {
+  color: $light-green;
 }

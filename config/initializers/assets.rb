@@ -15,4 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules")
 Rails.application.config.assets.precompile += %w(
   slideshow.js
   datepicker.js
+  calculate_total_price.js
 )

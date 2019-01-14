@@ -37,5 +37,9 @@
         <td><%= t ".price", value: @tour.price %></td>
       </tr>
     </table>
+    <% if signed_in? %>
+      <%= link_to t(".book_now"), new_booking_path(tour_id: @tour.id),
+        class: "btn btn-info btn-m header-btn" %>
+    <% end %>
   </div>
 </div>

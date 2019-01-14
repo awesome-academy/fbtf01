@@ -1,0 +1,6 @@
+$('.info-group').html('<%= j render partial: "info",
+  locals: {booking: @booking} %>');
+$('.approve-cancel-group').html('<%= j render partial: "approve_cancel",
+  locals: {booking: @booking} %>');
+$('.checkout-group').html('<%= j render partial: "checkout",
+  locals: {booking: @booking} %>');

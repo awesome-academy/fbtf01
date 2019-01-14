@@ -1,6 +1,11 @@
 en:
   activerecord:
     attributes:
+      booking:
+        status:
+          approved: "Approved"
+          canceled: "Canceled"
+          pending: "Pending"
       category:
         name:
           Cultural: "Cultural"
@@ -11,6 +16,10 @@ en:
           New Year: "New Year"
     errors:
       models:
+        booking:
+          attributes:
+            base:
+              max_passengers_reached: "Max passengers reached. Available: %{left}"
         location:
           attributes:
             base:
@@ -18,11 +27,51 @@ en:
   application:
     flash:
       not_signed_in: "You need to sign in first"
+  bookings:
+    approve_cancel:
+      approve: "Approve"
+      cancel: "Cancel"
+    booking:
+      booking_for: "Booking for Tour: %{tour_name} (created at: %{created_at}). Status: %{status}. By: %{user_name}"
+    checkout:
+      cancel: "Cancel"
+      checkout: "Checkout"
+    flash:
+      approve_booking_failed: "Cannot approve booking due to error(s)"
+      booking_not_found: "Booking does not exist"
+      cancel_booking_failed: "Cannot cancel booking due to error(s)"
+      create_booking_failed: "Cannot create booking due to error(s)"
+      create_booking_successful: "Create booking successfully"
+      not_correct_user: "You cannot see this booking"
+      objects_not_found: "Booking for non-existing tour or user"
+      tour_not_found: "Tour does not exist"
+    index:
+      title: "All Bookings"
+    info:
+      customer_name: "Customer Name: "
+      date_from: "From Date: "
+      date_to: "To Date: "
+      number_passengers: "Number of Passengers: "
+      status: "Booking Status: "
+      total_price: "Total Price: "
+      tour_name: "Tour Name: "
+    new:
+      save: "Save"
+      number_passengers: "Number of Passengers"
+      title: "Create Booking"
+      total_price: "Total Price: "
+    show:
+      title: "Booking Information"
+  charges:
+    create:
+      checkout_failed: "Cannot checkout due to error: %{e}"
+      checkout_successful: "Booking checkout successfully"
   dictionary:
     base_title: "Framgia Tour Booking System"
   layouts:
     header:
       admin: "Admin"
+      all_tours: "All Tours"
       bookings: "Bookings"
       booking_tours: "Framgia Tour Booking"
       language:
@@ -129,6 +178,7 @@ en:
       title: "Tours"
       tours_found: "%{count} tours found"
     show:
+      book_now: "Book Now"
       date_from: "From: "
       date_to: "To: "
       description: "Description: "

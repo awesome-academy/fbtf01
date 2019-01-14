@@ -1,0 +1,8 @@
+<%= link_to t(".approve"), approve_booking_path(booking),
+  remote: true, method: :patch, id: "admin-approve",
+  class: "btn btn-info btn-m header-btn",
+  style:"display: #{booking.approved? ? "none" : ""}" %>
+<%= link_to t(".cancel"), cancel_booking_path(booking),
+  remote: true, method: :patch, id: "admin-cancel",
+  class: "btn btn-info btn-m header-btn",
+  style:"display: #{booking.canceled? ? "none" : ""}" %>

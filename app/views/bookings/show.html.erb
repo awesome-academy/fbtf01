@@ -1,0 +1,18 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div class="row">
+  <div class="col-md-5 col-md-offset-4">
+    <table class="info-group">
+      <%= render partial: "info", locals: {booking: @booking} %>
+    </table>
+    <% if current_user.admin? %>
+      <div class="approve-cancel-group">
+        <%= render partial: "approve_cancel", locals: {booking: @booking} %>
+      </div>
+    <% elsif @booking.pending? && @booking.user == current_user %>
+      <div class="checkout-group">
+        <%= render partial: "checkout", locals: {booking: @booking} %>
+      </div>
+    <% end %>
+  </div>
+</div>

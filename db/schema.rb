@@ -14,7 +14,8 @@ ActiveRecord::Schema.define(version: 2018_12_26_055019) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "number_passengers"
-    t.integer "status", default: 2
+    t.integer "status", default: 0
+    t.float "total_price"
     t.integer "user_id"
     t.integer "tour_id"
     t.datetime "created_at", null: false
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 2018_12_26_055019) do
     t.string "password_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
