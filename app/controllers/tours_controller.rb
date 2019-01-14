@@ -1,7 +1,8 @@
 class ToursController < ApplicationController
   include ToursHelper
 
-  before_action :load_tour, only: :show
+  before_action :load_tour, only: [:show, :create_review]
+  before_action :load_locations, :load_reviews, :load_review, only: :show
   before_action :load_categories, only: :index
 
   def index
@@ -11,11 +12,6 @@ class ToursController < ApplicationController
   def show; end
 
   private
-
-  def tour_params
-    params.require(:tour).permit :name, :description, :min_passengers,
-      :max_passengers, :date_from, :date_to, :price, :search
-  end
 
   def load_tour
     @tour = Tour.find_by id: params[:id]
@@ -27,5 +23,21 @@ class ToursController < ApplicationController
 
   def load_categories
     @categories = Category.alphabetical
+  end
+
+  def load_locations
+    @locations =
+      @tour.locations.includes(:images).limit Settings.tours.locations.limit
+  end
+
+  def load_reviews
+    @reviews = @tour.reviews.newest.includes(:user).paginate page:
+      params[:page], per_page: Settings.reviews.paginate.per_page
+  end
+
+  def load_review
+    @tour.reviews.each do |review|
+      @review = review if signed_in? && review.user_id == current_user.id
+    end
   end
 end

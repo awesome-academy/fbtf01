@@ -4,7 +4,7 @@
 <div class="row">
   <div class="slideshow-container">
     <% images = [] %>
-    <% @tour.locations.each do |location| %>
+    <% @locations.each do |location| %>
       <% location.images.each {|image| images << image} %>
     <% end %>
     <%= render partial: "images/image", collection: images,
@@ -12,34 +12,36 @@
     <a class="prev-slide" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next-slide" onclick="plusSlides(1)">&#10095;</a>
   </div>
-  <div class="col-md-6 col-md-offset-3">
-    <div><b><%= t ".description" %></b></div>
-    <div><%= @tour.description %></div>
-    <table class="tour-info">
-      <tr><th><%= t ".info" %></th></tr>
-      <tr>
-        <td>
-          <%= t ".locations" %>
-          <% @tour.locations.each do |location| %>
-            <%= link_to "(#{location.name})", location_path(location) %>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td><%= t ".min_passengers", value: @tour.min_passengers %></td>
-        <td><%= t ".max_passengers", value: @tour.max_passengers %></td>
-      </tr>
-      <tr>
-        <td><%= t ".date_from" %><%= l @tour.date_from, format: :datepicker %></td>
-        <td><%= t ".date_to" %><%= l @tour.date_to, format: :datepicker %></td>
-      </tr>
-      <tr>
-        <td><%= t ".price", value: @tour.price %></td>
-      </tr>
+
+  <%= render partial: "info", object: @tour %>
+
+  <% if signed_in? %>
+    <div class="col-md-6 col-md-offset-3 tour-reviews">
+      <b><%= t ".your_review" %></b>
+      <% if current_user.reviewed? @tour %>
+        <%= link_to t(".edit"), edit_review_path(@review), remote: true,
+          id: "edit-review" %>
+        <div class="review-form">
+          <table>
+            <tr class="th-review">
+              <td id="current-user-review"><%= @review.content %></td>
+            </tr>
+          </table>
+          <%= render partial: "reviews/edit_review", locals:
+            {review: @review} %>
+      <% else %>
+        <%= render partial: "reviews/new_review", locals: {tour: @tour} %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="col-md-6 col-md-offset-3 tour-reviews">
+    <b><%= t ".reviews" %></b>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <table>
+      <%= render @reviews %>
     </table>
-    <% if signed_in? %>
-      <%= link_to t(".book_now"), new_booking_path(tour_id: @tour.id),
-        class: "btn btn-info btn-m header-btn" %>
-    <% end %>
+    <%= will_paginate @reviews %>
   </div>
 </div>
