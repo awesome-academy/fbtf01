@@ -16,4 +16,5 @@ Rails.application.config.assets.precompile += %w(
   slideshow.js
   datepicker.js
   calculate_total_price.js
+  search_users.js
 )

@@ -2,8 +2,13 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = @users.paginate page: params[:page],
+    @q = @users.ransack params[:users]
+    @users = @q.result.paginate page: params[:page],
       per_page: Settings.users.paginate.per_page
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show; end

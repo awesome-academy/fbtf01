@@ -6,7 +6,11 @@ class ToursController < ApplicationController
   before_action :load_categories, only: :index
 
   def index
-    handle_tours_search params
+    @q = Tour.ransack params[:tours]
+    @tours = load_tours_by_category params[:category_id] if params[:category_id]
+    @tours = @q.result(distinct: true).includes :locations if params[:tours]
+    @tours = @tours.paginate page: params[:page],
+      per_page: Settings.tours.paginate.per_page
   end
 
   def show; end
