@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :load_location, except: [:index, :new, :create]
-  before_action :signed_in_user, :admin_user, except: [:index, :show]
+  before_action :authenticate_user!, :admin_user, except: [:index, :show]
 
   def index
     @locations = Location.newest.paginate page: params[:page],

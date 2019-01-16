@@ -23,7 +23,7 @@
               class: "dropdown-item" %>
           </div>
         </div>
-        <% if signed_in? %>
+        <% if user_signed_in? %>
           <% if current_user.admin? %>
             <div class="dropdown header-tags">
               <button class="btn dropdown-toggle btn-m" type="button"
@@ -38,9 +38,11 @@
                 <%= link_to t(".manage_locations"), locations_path,
                   class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to t(".manage_tours"), tours_path, class: "dropdown-item" %>
+                <%= link_to t(".manage_tours"), tours_path,
+                  class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to t(".manage_bookings"), bookings_path, class: "dropdown-item" %>
+                <%= link_to t(".manage_bookings"), bookings_path,
+                  class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to t(".manage_reviews"), "#", class: "dropdown-item" %>
               </div>
@@ -53,20 +55,25 @@
               <%= t ".profile" %> <b class="caret"></b>
             </button>
             <div class="dropdown-menu" aria-labelledby="languageDropDown">
-              <%= link_to t(".bookings"), bookings_path, class: "dropdown-item" %>
+              <%= link_to t(".bookings"), bookings_path, class:
+                "dropdown-item" %>
               <div class="dropdown-divider"></div>
-              <%= link_to t(".settings"), edit_user_path(current_user), class: "dropdown-item" %>
+              <%= link_to t(".settings"), edit_user_registration_path,
+                class: "dropdown-item" %>
             </div>
           </div>
           <div class="header-tags">
-              <%= link_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-info btn-m header-btn" %>
+              <%= link_to t(".sign_out"), destroy_user_session_path,
+                method: :delete, class: "btn btn-info btn-m header-btn" %>
           </div>
         <% else %>
           <div class="header-tags">
-              <%= link_to t(".sign_in"), sign_in_path, class: "btn btn-info btn-m header-btn" %>
+              <%= link_to t(".sign_in"), new_user_session_path, class:
+                "btn btn-info btn-m header-btn" %>
           </div>
           <div class="header-tags">
-            <%= link_to t(".register"), register_path, class: "btn btn-info btn-m header-btn" %>
+            <%= link_to t(".register"), new_user_registration_path, class:
+              "btn btn-info btn-m header-btn" %>
           </div>
         <% end %>
       </div>
