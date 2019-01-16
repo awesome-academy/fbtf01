@@ -16,6 +16,10 @@ vi:
           New Year: "Năm Mới"
     errors:
       models:
+        booking:
+          attributes:
+            base:
+              max_passengers_reached: "Vượt quá số hành khách tối đa. Còn lại: %{left}"
         location:
           attributes:
             base:
@@ -84,6 +88,12 @@ vi:
       sign_in: "Đăng Nhập"
       sign_out: "Đăng Xuất"
       register: "Đăng Ký"
+  likes:
+    flash:
+      like_failed: "Không thể thích bài viết này"
+      like_not_found: "Like không tồn tại"
+      review_not_found: "Bài viết không tồn tại"
+      unlike_failed: "Không thể không thích bài viết này"
   locations:
     edit:
       description: "Mô Tả"
@@ -133,11 +143,15 @@ vi:
       submit: "Gửi"
       title: "Đổi Mật Khẩu"
   reviews:
+    edit_review:
+      update: "Cập Nhật"
     flash:
       create_review_failed: "Lỗi trong quá trình tạo bài viết"
       create_review_successful: "Tạo bài viết thành công"
       update_review_failed: "Lỗi trong quá trình cập nhật bài viết"
       update_review_successful: "Cập nhật bài viết thành công"
+    new_review:
+      review: "Đánh Giá"
   sessions:
     flash:
       already_signed_in: "Bạn đã ở trạng thái đăng nhập"
@@ -191,9 +205,7 @@ vi:
     show:
       edit: "Sửa"
       reviews: "Bài Viết"
-      review: "Đánh Giá"
       title: "%{name}"
-      update: "Cập Nhật"
       your_review: "Bài Viết Của Bạn"
   users:
     edit:

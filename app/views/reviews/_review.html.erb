@@ -2,5 +2,8 @@
   <tr class="th-review">
     <th><%= review.user.name %></th>
     <td><%= review.content %></td>
+    <td id="like-group-<%= review.id %>">
+      <%= render partial: "likes/like_count", locals: {review: review} %>
+    </td>
   </tr>
 <% end %>

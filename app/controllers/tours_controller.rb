@@ -31,12 +31,12 @@ class ToursController < ApplicationController
   end
 
   def load_reviews
-    @reviews = @tour.reviews.newest.includes(:user).paginate page:
+    @reviews = @tour.reviews.most_likes(@tour.id).includes(:user).paginate page:
       params[:page], per_page: Settings.reviews.paginate.per_page
   end
 
   def load_review
-    @tour.reviews.each do |review|
+    @reviews.each do |review|
       @review = review if signed_in? && review.user_id == current_user.id
     end
   end

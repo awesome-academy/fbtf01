@@ -1,0 +1,2 @@
+$('#like-group-<%= @review.id %>').html('<%= j render partial:
+  'likes/like_count', locals: {review: @review} %>')

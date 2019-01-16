@@ -10,4 +10,11 @@ class Review < ApplicationRecord
 
   # scopes
   scope :newest, ->{order created_at: :desc}
+  scope :most_likes, (
+    lambda do |tour_id|
+      joins(:likes)
+      .group("reviews.id")
+      .having("reviews.tour_id = ?", tour_id)
+      .order("count(likes.user_id) desc")
+    end)
 end

@@ -117,3 +117,14 @@ Tour.all.each do |tour|
     user_id = 1 if user_id > 22
   end
 end
+
+user_id = 1
+Review.all.each do |review|
+  rand(2..5).times do |n|
+    Like.create!(
+      user_id: user_id,
+      review_id: review.id)
+    user_id += 1
+    user_id = 1 if user_id > 22
+  end
+end

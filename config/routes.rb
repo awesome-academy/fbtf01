@@ -30,5 +30,6 @@ Rails.application.routes.draw do
 
     resources :charges
     resources :reviews
+    resources :likes, only: [:create, :destroy]
   end
 end

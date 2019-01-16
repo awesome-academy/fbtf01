@@ -88,6 +88,12 @@ en:
       sign_in: "Sign In"
       sign_out: "Sign Out"
       register: "Register"
+  likes:
+    flash:
+      like_failed: "Unable to like this review"
+      like_not_found: "Like does not exist"
+      review_not_found: "Review does not exist"
+      unlike_failed: "Unable to unlike this review"
   locations:
     edit:
       description: "Description"

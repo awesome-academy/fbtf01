@@ -1,0 +1,14 @@
+<div>
+  <% if signed_in? %>
+    <%= link_to image_tag("unlike.png", size: Settings.reviews.likes.image_size),
+      like_path(current_user_like(review), review_id: review.id), method: :delete,
+      remote: true if liked_review(review) %>
+    <%= link_to image_tag("like.png", size: Settings.reviews.likes.image_size),
+      likes_path(review_id: review.id), method: :post,
+      remote: true unless liked_review(review) %>
+  <% else %>
+    <%= image_tag "like.png",
+      size: Settings.reviews.likes.image_size %>
+  <% end %>
+</div>
+<div class="likes-count"><%= review.likes.count %></div>
