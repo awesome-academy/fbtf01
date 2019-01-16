@@ -60,6 +60,6 @@ module ToursHelper
   end
 
   def current_user_like review
-    review.likes.each{|like| like if like.user_id == current_user.id}
+    review.likes.each{|like| return like if like.user_id == current_user.id}
   end
 end

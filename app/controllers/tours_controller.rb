@@ -36,7 +36,7 @@ class ToursController < ApplicationController
   end
 
   def load_review
-    @reviews.each do |review|
+    @tour.reviews.each do |review|
       @review = review if signed_in? && review.user_id == current_user.id
     end
   end
