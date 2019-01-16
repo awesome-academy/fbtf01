@@ -40,6 +40,12 @@ en:
         email: "Email"
         submit: "Submit"
         title: "Forgot Password"
+      edit:
+        change: "Change Password"
+        min_characters: "(%{val} characters minimum)"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        title: "Change Password"
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."

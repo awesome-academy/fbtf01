@@ -13,7 +13,10 @@
     <a class="next-slide" onclick="plusSlides(1)">&#10095;</a>
   </div>
   <%= render partial: "info", object: @tour %>
-  <% if signed_in? %>
+</div>
+
+<div class="row">
+  <% if user_signed_in? %>
     <div class="col-md-6 col-md-offset-3 tour-reviews">
       <b><%= t ".your_review" %></b>
       <% if current_user.reviewed? @tour %>
@@ -37,6 +40,9 @@
         </div>
     </div>
   <% end %>
+</div>
+
+<div class="row">
   <div class="col-md-6 col-md-offset-3 tour-reviews">
     <b><%= t ".reviews" %></b>
   </div>
