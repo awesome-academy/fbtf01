@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :signed_in_user
+  before_action :authenticate_user!
   before_action :load_booking, only: [:show, :approve, :cancel]
   before_action :correct_user, only: :show
   before_action :load_tour, only: :new

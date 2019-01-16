@@ -1,15 +1,20 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
-
   # callbacks
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # Confirms a logged-in user.
-  def signed_in_user
-    return if signed_in?
+  protected
 
-    flash[:danger] = t "application.flash.not_signed_in"
+  def admin_user
+    return if current_user.admin?
+
+    flash[:danger] = t "application.flash.user_not_admin"
     redirect_to root_path
+  end
+
+  def configure_permitted_parameters
+    added_attrs = [:name, :address, :phone]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
   end
 
   private
