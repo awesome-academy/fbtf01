@@ -68,6 +68,9 @@ en:
       checkout_successful: "Booking checkout successfully"
   dictionary:
     base_title: "Framgia Tour Booking System"
+  errors:
+    messages:
+      access_denied: "You are not authorized to access this page."
   layouts:
     header:
       admin: "Admin"

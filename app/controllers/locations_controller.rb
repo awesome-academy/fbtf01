@@ -1,16 +1,14 @@
 class LocationsController < ApplicationController
-  before_action :load_location, except: [:index, :new, :create]
-  before_action :authenticate_user!, :admin_user, except: [:index, :show]
+  load_and_authorize_resource
 
   def index
-    @locations = Location.newest.paginate page: params[:page],
+    @locations = @locations.newest.paginate page: params[:page],
       per_page: Settings.locations.paginate.per_page
   end
 
   def show; end
 
   def new
-    @location = Location.new
     @image = @location.images.build
   end
 
@@ -56,13 +54,5 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit :name, :description,
       images_attributes: [:id, :url, :_destroy]
-  end
-
-  def load_location
-    @location = Location.find_by id: params[:id]
-    return if @location
-
-    flash[:danger] = t "locations.flash.location_not_found"
-    redirect_to locations_path
   end
 end

@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
+  load_and_authorize_resource
   before_action :load_review
-  before_action :load_like, only: :destroy
 
   def create
     @like = @review.likes.build
@@ -27,14 +27,6 @@ class LikesController < ApplicationController
   end
 
   private
-
-  def load_like
-    @like = Like.find_by id: params[:id]
-    return if @like
-
-    flash[:danger] = t ".flash.like_not_found"
-    redirect_to tours_path
-  end
 
   def load_review
     @review = Review.find_by id: params[:review_id]
