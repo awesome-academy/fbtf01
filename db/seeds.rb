@@ -1,3 +1,4 @@
+Faker::UniqueGenerator.clear
 # Users
 email = "tour_booking_admin@framgia.com"
 User.create!(

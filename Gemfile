@@ -32,6 +32,8 @@ gem "will_paginate", "3.1.6"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
+  gem "rspec-rails"
   gem "sqlite3", "1.3.13"
 end
 
@@ -47,7 +49,10 @@ group :test do
   gem "chromedriver-helper"
   gem "minitest"
   gem "minitest-reporters"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "4.0.0.rc1"
+  gem "simplecov", require: false
 end
 
 group :production do
