@@ -1,6 +1,12 @@
 <% provide :title, t(".title") %>
+<% if params[:tours] %>
+  <div class="col-md-offset-4 alert alert-success search-success" role="alert">
+    <%= t ".tours_found", count: @tours.count %>
+  </div>
+<% end %>
 <h1><%= t ".title" %></h1>
 <div class="container">
+  <%= render "static_pages/search_tours" %>
   <nav>
     <div class="nav navbar-nav">
       <div class="dropdown dropdown-on-hover">
@@ -11,13 +17,8 @@
     </div>
   </nav>
 </div>
-<% if params[:search] %>
-  <div class="col-md-offset-4 alert alert-success search-success" role="alert">
-    <%= t ".tours_found", count: @tours.count %>
-  </div>
-<% end %>
 <%= will_paginate %>
 <ul class="tours">
-    <%= render @tours %>
+  <%= render @tours %>
 </ul>
 <%= will_paginate %>

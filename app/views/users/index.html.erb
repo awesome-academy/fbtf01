@@ -1,15 +1,12 @@
+<%=javascript_include_tag "search_users.js"%>
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
-<%= will_paginate %>
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user_path(user) %>
-      <% unless user.admin? %>
-        | <%= link_to t(".delete"), user, method: :delete,
-          data: {confirm: t(".sure")} %>
-      <% end %>
-    </li>
+<div class="users-search-form">
+  <%= search_form_for @q, as: :users, remote: true do |f| %>
+    <%= f.label :name_or_email_cont %>
+    <%= f.search_field :name_or_email_cont, class: "form-control" %>
   <% end %>
-</ul>
-<%= will_paginate %>
+</div>
+<div class="users-list">
+  <%= render "users" %>
+</div>

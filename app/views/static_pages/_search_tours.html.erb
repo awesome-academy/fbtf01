@@ -1,18 +1,17 @@
 <%= javascript_include_tag("datepicker.js") %>
-<%= form_tag tours_path, method: :get,
-  class: "search-form col-md-8 col-md-offset-2" do %>
+<%= search_form_for @q, as: :tours,
+  class: "search-form col-md-8 col-md-offset-2" do |f| %>
   <div class="search-input">
-    <%= text_field_tag :search, params[:search], placeholder: t(".wanna_go"),
+    <%= f.search_field :name_or_locations_name_cont, placeholder: t(".wanna_go"),
       class: "search-form-input form-control" %>
   </div>
   <div class="datepicker-input">
-    <%= text_field_tag :date_from, params[:date_from], placeholder: t(".from"),
+    <%= f.search_field :date_from_gteq, placeholder: t(".from"),
       class: "datepicker form-control" %>
   </div>
   <div class="datepicker-input">
-    <%= text_field_tag :date_to, params[:date_to], placeholder: t(".to"),
+    <%= f.search_field :date_to_lteq, placeholder: t(".to"),
       class: "datepicker form-control" %>
   </div>
-  <%= submit_tag t(".search"), name: nil,
-    class: "btn btn-info btn-m search-form-submit" %>
+  <%= f.submit t(".search"), class: "btn btn-info btn-m search-form-submit" %>
 <% end %>

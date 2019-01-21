@@ -22,6 +22,7 @@ gem "mini_magick"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.2"
 gem "rails-i18n", "~> 5.1"
+gem "ransack"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "stripe"
