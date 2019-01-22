@@ -43,7 +43,9 @@ class User < ApplicationRecord
 
   # Create Stripe customer id when create new account
   def assign_customer_id
-    customer = Stripe::Customer.create email: email
+    customer_list = Stripe::Customer.list email: email
+    customer = customer_list.data.first
+    customer ||= Stripe::Customer.create email: email
     update_columns customer_id: customer.id
   end
 
